@@ -5,3 +5,8 @@
 .claude/
 CLAUDE.md
 espanol/CLAUDE.md
+.gitignore
+SKILLS.md
+AGENTS.md
+espanol/SKILLS.md
+espanol/AGENTS.md
