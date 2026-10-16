@@ -1,6 +1,6 @@
 # Initial requirements
 
-Status: draft v0.1. References S1, D-*, and P-* are in `00-contexto.md`; RN-* and PRN-* are in `03-reglas-negocio.md`. The criteria are verification proposals and must be detailed when each workflow is specified.
+Status: draft v0.1. References S1, D-*, and P-* are in `00-context.md`; RN-* and PRN-* are in `03-business-rules.md`. The criteria are verification proposals and must be detailed when each workflow is specified.
 
 ## Functional requirements
 

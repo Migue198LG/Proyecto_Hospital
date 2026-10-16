@@ -6,14 +6,16 @@ Academic project to manage appointments, consultations, prescriptions, medicatio
 
 ## Start here
 
-1. [Context, agreements, and open questions](docs/00-contexto.md).
-2. [Problem statement and objectives](docs/01-problematica.md).
-3. [Functional and non-functional requirements](docs/02-requerimientos.md).
-4. [Business rules](docs/03-reglas-negocio.md).
-5. [View map and brief for Claude Design](docs/04-diseno-vistas.md).
-6. [Practical guide to specification-driven development](docs/05-guia-sdd.md) and [first feature example](specs/001-agendar-cita.md).
+1. [Context, agreements, and open questions](docs/00-context.md).
+2. [Problem statement and objectives](docs/01-problem-statement.md).
+3. [Functional and non-functional requirements](docs/02-requirements.md).
+4. [Business rules](docs/03-business-rules.md).
+5. [View map and brief for Claude Design](docs/04-view-design.md).
+6. [Practical guide to specification-driven development](docs/05-spec-driven-development.md) and [first feature example](specs/001-schedule-appointment.md).
 
-The original PDFs are preserved in `contexto/`. The documents written here provide a basis for team review; they do not automatically approve the proposals.
+The original PDFs are preserved in `contexto/`. [Project requirements from the original sources](docs/06-source-requirements.md) collects their scope, requirements, rules, data, and assessment deliverables in English, with a [Spanish version](espanol/docs/06-source-requirements.md). It omits institutional headings and page footers; use `docs/00-context.md` alongside it for later team decisions. The documents written here provide a basis for team review; they do not automatically approve the proposals.
+
+Markdown document filenames are in English in both language versions. Primary documentation is in English; `espanol/` contains its Spanish counterpart with matching filenames. Original PDF filenames are preserved.
 
 ## Specification-driven development workflow
 
@@ -36,25 +38,27 @@ The academic deliverables were taken from the original rubrics; preparing mockup
 
 - `AGENTS.md`: shared project instructions and entry point for Codex.
 - `CLAUDE.md`: imports the same instructions for Claude Code.
+- `SKILLS.md`: shared procedures; `.agents/skills` links to `.claude/skills/` so both agents read the same project skills. Use `claude-codex-sync` to check or repair this arrangement.
 - `docs/`: shared functional context; read only documents relevant to the task.
-- `specs/plantilla.md`: lightweight format for specifying a feature when work on it begins.
-- `specs/001-agendar-cita.md`: draft example for learning the cycle before implementation.
+- `specs/template.md`: lightweight format for specifying a feature when work on it begins.
+- `specs/001-schedule-appointment.md`: draft example for learning the cycle before implementation.
 
 An assignment to an agent must include: objective, relevant RF/RN, files to modify, scope, relevant open questions, and how to verify the result. Both agents can implement or review; the team assigns responsibilities per task.
 
 ## First step in Claude Design
 
-Attach the original PDF `contexto/ESPECIFICACIONES PROYECTO FINAL BASES DE DATOS 26-2.pdf` along with `docs/00-contexto.md`, `docs/02-requerimientos.md`, `docs/03-reglas-negocio.md`, and `docs/04-diseno-vistas.md`. Copy the prompt from the last document. The PDF preserves the academic requirements; the Markdown files distinguish the team's later decisions from proposals. If a discrepancy appears, record it for review. The initial assignment is a **general map of the five roles**, not system development.
+Attach the original PDF `contexto/ESPECIFICACIONES PROYECTO FINAL BASES DE DATOS 26-2.pdf` along with `docs/00-context.md`, `docs/02-requirements.md`, `docs/03-business-rules.md`, and `docs/04-view-design.md`. Copy the prompt from the last document. The PDF preserves the academic requirements; the Markdown files distinguish the team's later decisions from proposals. If a discrepancy appears, record it for review. The initial assignment is a **general map of the five roles**, not system development.
 
 Afterward, incorporate the design export, decisions made, and open questions into the project. Link screen names to their `UI-*` identifiers before assigning their implementation.
 
-## 20 octubre
-- Problematica
-- Requisitos funcionales
-- Requisitos no funcionales
-- Diagrama de contexto
-- Modelo entidad-relacion
-- Diccionario de datos
+## October 20
+
+- Problem statement
+- Functional requirements
+- Non-functional requirements
+- Context diagram
+- Entity–relationship model
+- Data dictionary
 
 ## References
 

@@ -1,6 +1,6 @@
 # Business rules
 
-Status: draft v0.1. References S1/EQUIPO and decisions D-* are in `00-contexto.md`. Open questions P-* must be retained until the team resolves them.
+Status: draft v0.1. References S1/EQUIPO and decisions D-* are in `00-context.md`. Open questions P-* must be retained until the team resolves them.
 
 ## Extracted rules and confirmed decisions
 

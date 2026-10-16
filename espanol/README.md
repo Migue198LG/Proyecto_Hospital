@@ -8,14 +8,16 @@ Proyecto académico para gestionar citas, consultas, recetas, medicamentos, serv
 
 ## Empezar aquí
 
-1. [Contexto, acuerdos y pendientes](docs/00-contexto.md).
-2. [Problemática y objetivos](docs/01-problematica.md).
-3. [Requerimientos funcionales y no funcionales](docs/02-requerimientos.md).
-4. [Reglas de negocio](docs/03-reglas-negocio.md).
-5. [Mapa de vistas y brief para Claude Design](docs/04-diseno-vistas.md).
-6. [Guía práctica para desarrollar con especificaciones](docs/05-guia-sdd.md) y [primer ejemplo de funcionalidad](specs/001-agendar-cita.md).
+1. [Contexto, acuerdos y pendientes](docs/00-context.md).
+2. [Problemática y objetivos](docs/01-problem-statement.md).
+3. [Requerimientos funcionales y no funcionales](docs/02-requirements.md).
+4. [Reglas de negocio](docs/03-business-rules.md).
+5. [Mapa de vistas y brief para Claude Design](docs/04-view-design.md).
+6. [Guía práctica para desarrollar con especificaciones](docs/05-spec-driven-development.md) y [primer ejemplo de funcionalidad](specs/001-schedule-appointment.md).
 
-Los PDFs originales se conservan en `contexto/`. Los documentos redactados aquí son una base para revisión del equipo, no una aprobación automática de las propuestas.
+Los PDFs originales se conservan en `contexto/`. [Requisitos del proyecto extraídos de las fuentes originales](../docs/06-source-requirements.md) reúne su alcance, requisitos, reglas, datos y entregables de evaluación en inglés, con una [versión en español](docs/06-source-requirements.md). Omite encabezados institucionales y pies de página; usar también `docs/00-context.md` para las decisiones posteriores del equipo. Los documentos redactados aquí son una base para revisión del equipo, no una aprobación automática de las propuestas.
+
+Los nombres de los documentos Markdown están en inglés en ambas versiones de idioma. La documentación principal está en inglés; `espanol/` contiene su equivalente en español con los mismos nombres de archivo. Se conservan los nombres de los PDFs originales.
 
 ## Flujo de spec driven development
 
@@ -38,15 +40,16 @@ Las entregas académicas se obtuvieron de las rúbricas originales; no basta con
 
 - `AGENTS.md`: instrucciones comunes del proyecto y entrada para Codex.
 - `CLAUDE.md`: importa las mismas instrucciones para Claude Code.
+- `SKILLS.md`: procedimientos compartidos; `.agents/skills` enlaza a `.claude/skills/` para que ambos agentes lean las mismas skills del proyecto. Usar `claude-codex-sync` para comprobar o reparar esta configuración.
 - `docs/`: contexto funcional compartido; leer solo los documentos relevantes para la tarea.
-- `specs/plantilla.md`: formato ligero para especificar una funcionalidad cuando se empiece a trabajar en ella.
-- `specs/001-agendar-cita.md`: ejemplo en borrador para aprender el ciclo antes de implementar.
+- `specs/template.md`: formato ligero para especificar una funcionalidad cuando se empiece a trabajar en ella.
+- `specs/001-schedule-appointment.md`: ejemplo en borrador para aprender el ciclo antes de implementar.
 
 Un encargo a un agente debe incluir: objetivo, RF/RN implicados, archivos a modificar, alcance, pendientes relevantes y cómo verificar el resultado. Ambos agentes pueden implementar o revisar; el equipo asigna responsabilidades por tarea.
 
 ## Primer paso en Claude Design
 
-Adjuntar el PDF original `contexto/ESPECIFICACIONES PROYECTO FINAL BASES DE DATOS 26-2.pdf` junto con `docs/00-contexto.md`, `docs/02-requerimientos.md`, `docs/03-reglas-negocio.md` y `docs/04-diseno-vistas.md`. Copiar el prompt del último documento. El PDF conserva las exigencias académicas; los Markdown distinguen las decisiones posteriores del equipo y las propuestas. Si aparece una discrepancia, registrarla para revisión. El encargo inicial es **mapa general de los cinco roles**, no el desarrollo del sistema.
+Adjuntar el PDF original `contexto/ESPECIFICACIONES PROYECTO FINAL BASES DE DATOS 26-2.pdf` junto con `docs/00-context.md`, `docs/02-requirements.md`, `docs/03-business-rules.md` y `docs/04-view-design.md`. Copiar el prompt del último documento. El PDF conserva las exigencias académicas; los Markdown distinguen las decisiones posteriores del equipo y las propuestas. Si aparece una discrepancia, registrarla para revisión. El encargo inicial es **mapa general de los cinco roles**, no el desarrollo del sistema.
 
 Después, incorporar al proyecto la exportación del diseño, las decisiones tomadas y sus pendientes. Vincular los nombres de pantallas con sus identificadores `UI-*` antes de encargar su implementación.
 

@@ -1,6 +1,6 @@
 # Reglas de negocio
 
-Estado: borrador v0.1. Referencias S1/EQUIPO y decisiones D-* en `00-contexto.md`. Los pendientes P-* deben conservarse hasta que el equipo los resuelva.
+Estado: borrador v0.1. Referencias S1/EQUIPO y decisiones D-* en `00-context.md`. Los pendientes P-* deben conservarse hasta que el equipo los resuelva.
 
 ## Reglas extraídas y decisiones confirmadas
 

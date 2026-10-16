@@ -1,6 +1,6 @@
 # Guía práctica: desarrollar este proyecto con especificaciones
 
-Estado: guía de trabajo inicial, 2026-10-12. Leer después de `README.md` y `docs/00-contexto.md`.
+Estado: guía de trabajo inicial, 2026-10-12. Leer después de `README.md` y `docs/00-context.md`.
 
 ## Idea central
 
@@ -10,8 +10,8 @@ El proceso se parece al flujo *Specify → Plan → Tasks → Implement → Conv
 
 ## Dos niveles de especificación
 
-1. **Nivel de proyecto:** `docs/00-contexto.md` registra decisiones y pendientes; `01-problematica.md` explica el problema; `02-requerimientos.md` reúne RF/RNF; `03-reglas-negocio.md` contiene RN; `04-diseno-vistas.md` identifica las pantallas. El PDF de `contexto/` es la fuente académica original.
-2. **Nivel de funcionalidad:** un archivo en `specs/` concreta un recorrido que una persona puede completar o una operación del sistema. Ejemplo: `specs/001-agendar-cita.md`. Se crea desde `specs/plantilla.md`, con referencias a los IDs globales, criterios de aceptación, casos límite y preguntas abiertas.
+1. **Nivel de proyecto:** `docs/00-context.md` registra decisiones y pendientes; `01-problem-statement.md` explica el problema; `02-requirements.md` reúne RF/RNF; `03-business-rules.md` contiene RN; `04-view-design.md` identifica las pantallas. El PDF de `contexto/` es la fuente académica original.
+2. **Nivel de funcionalidad:** un archivo en `specs/` concreta un recorrido que una persona puede completar o una operación del sistema. Ejemplo: `specs/001-schedule-appointment.md`. Se crea desde `specs/template.md`, con referencias a los IDs globales, criterios de aceptación, casos límite y preguntas abiertas.
 
 El documento de proyecto se modifica cuando cambia una regla o decisión compartida. La spec de una funcionalidad se modifica cuando cambia el comportamiento de esa funcionalidad. Un boceto no reemplaza ninguno de los dos.
 
@@ -21,7 +21,7 @@ El documento de proyecto se modifica cuando cambia una regla o decisión compart
 | --- | --- | --- |
 | 1. Delimitar | ¿Quién necesita hacer qué y qué queda fuera? | Necesidad, actores y alcance en la spec |
 | 2. Especificar | ¿Qué reglas, entradas, salidas, estados y permisos aplican? | Referencias RF/RN y flujo observable |
-| 3. Aclarar | ¿Qué decisión falta para que dos personas implementen lo mismo? | P-* resuelto en `00-contexto.md` o señalado como bloqueo de esa parte |
+| 3. Aclarar | ¿Qué decisión falta para que dos personas implementen lo mismo? | P-* resuelto en `00-context.md` o señalado como bloqueo de esa parte |
 | 4. Bocetar | ¿Cómo verá y completará el recorrido cada rol? | Prototipo con IDs UI-*, estados y errores |
 | 5. Planear | ¿Qué datos, contratos, transacciones y componentes hacen falta? | Plan técnico de esa funcionalidad; stack solo cuando se acuerde |
 | 6. Dividir | ¿Qué tareas pequeñas pueden construirse y comprobarse? | Lista de tareas con responsable y dependencias |
@@ -45,7 +45,7 @@ La pantalla ayuda a evitar un error; la regla debe cumplirse también cuando la 
 
 ## Ejercicio con el proyecto actual
 
-1. Leer [la especificación de ejemplo de agendamiento](../specs/001-agendar-cita.md). Separar lo confirmado de P-03/P-04/P-05/P-11.
+1. Leer [la especificación de ejemplo de agendamiento](../specs/001-schedule-appointment.md). Separar lo confirmado de P-03/P-04/P-05/P-11.
 2. Comparar sus criterios con el boceto UI-P03/UI-P04 de Claude Design. Anotar campos o estados que falten.
 3. Resolver con el equipo las preguntas que afecten la cita antes del plan técnico: duración, qué significa cita pendiente, bordes de tiempo y asignación de consultorio.
 4. Elaborar la primera spec implementable del flujo acordado. Después decidir arquitectura y esquema para ese flujo, no para todo el hospital de una vez.
@@ -54,8 +54,8 @@ La pantalla ayuda a evitar un error; la regla debe cumplirse también cuando la 
 **Prompt de revisión para un agente, antes de programar:**
 
 ```text
-Lee el PDF de contexto, docs/00-contexto.md, docs/02-requerimientos.md,
-docs/03-reglas-negocio.md y specs/001-agendar-cita.md.
+Lee el PDF de contexto, docs/00-context.md, docs/02-requirements.md,
+docs/03-business-rules.md y specs/001-schedule-appointment.md.
 Revisa la spec contra la fuente: identifica contradicciones, reglas sin criterio
 de aceptación, criterios sin fuente y decisiones P-* todavía necesarias.
 Propón correcciones concretas al documento. No elijas stack ni escribas código.
@@ -75,12 +75,12 @@ registrado como decisión del proyecto; señala cualquier hueco.
 
 Claude Design explora la interfaz y registra decisiones visuales. Codex y Claude Code pueden revisar una spec, planear, implementar o comprobar; cada tarea debe nombrar los mismos archivos y criterios. Cuando dos personas o agentes trabajen a la vez, asignar responsables por archivo o módulo y acordar el contrato entre sus tareas antes de hacer cambios dependientes.
 
-Al terminar una tarea, el resultado debe decir qué RF/RN/CA cubre, qué se verificó y qué sigue pendiente. El equipo incorpora cualquier decisión nueva a `docs/00-contexto.md`, después actualiza la spec, el boceto y el código afectado. Mantener estos documentos bajo control de versiones permitirá revisar quién cambió una regla y por qué.
+Al terminar una tarea, el resultado debe decir qué RF/RN/CA cubre, qué se verificó y qué sigue pendiente. El equipo incorpora cualquier decisión nueva a `docs/00-context.md`, después actualiza la spec, el boceto y el código afectado. Mantener estos documentos bajo control de versiones permitirá revisar quién cambió una regla y por qué.
 
 ## Orden recomendado ahora
 
 1. Revisar en equipo los borradores de problemática, RF/RNF y RN. Identificar qué proviene del PDF y qué es propuesta.
-2. Obtener en Claude Design el mapa general de cinco roles y seis vistas iniciales, usando `docs/04-diseno-vistas.md`.
+2. Obtener en Claude Design el mapa general de cinco roles y seis vistas iniciales, usando `docs/04-view-design.md`.
 3. Preparar los diagramas de contexto, entidad-relación y diccionario de datos de la primera rúbrica; resolver preguntas de negocio que afecten esos modelos.
 4. Refinar `SPEC-001` y elegir el stack cuando se vaya a planear su implementación.
 5. Implementar y verificar primero un recorrido pequeño: registro/login, agendamiento, comprobante y confirmación de pago según el método que acuerden.

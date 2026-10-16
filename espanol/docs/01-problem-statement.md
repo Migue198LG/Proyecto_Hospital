@@ -1,6 +1,6 @@
 # Problemática y objetivos
 
-Estado: borrador para revisar con el equipo. Fuente del alcance: S1; estructura de entrega: S2, definidas en `00-contexto.md`.
+Estado: borrador para revisar con el equipo. Fuente del alcance: S1; estructura de entrega: S2, definidas en `00-context.md`.
 
 ## Problemática
 
@@ -27,6 +27,6 @@ Desarrollar un sistema web que gestione citas y operaciones asociadas de un hosp
 
 ## Evidencia de éxito propuesta
 
-Los criterios detallados se encuentran en `02-requerimientos.md`. La demostración debe permitir agendar una cita válida, rechazar una que incumpla las reglas, confirmar un pago, cancelar aplicando su política, realizar una atención con receta y generar un ticket por una venta.
+Los criterios detallados se encuentran en `02-requirements.md`. La demostración debe permitir agendar una cita válida, rechazar una que incumpla las reglas, confirmar un pago, cancelar aplicando su política, realizar una atención con receta y generar un ticket por una venta.
 
 También se verificará que recepción no pueda cobrar ni consultar contenido clínico, y que los tres roles internos no accedan fuera de la VPN. Son criterios del proyecto, no resultados ya obtenidos.

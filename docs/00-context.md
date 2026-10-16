@@ -23,6 +23,8 @@ Status: draft v0.1, 2026-10-12. Working name: Hospital management system.
 | D-04 | The cashier handles payment collection; reception no longer collects payments | EQUIPO |
 | D-05 | Specification-driven development using Codex and Claude | EQUIPO |
 | D-06 | First Claude Design assignment: general map of the five roles | EQUIPO |
+| D-07 | Claude Code and Codex share project skills; updates to Claude's project skills must also be available to Codex | Explicit user instruction, 2026-10-15 |
+| D-08 | Use English Markdown document filenames in both language versions; primary documentation is in English with Spanish mirrors. Document 06 extracts project-relevant source content; original PDFs retain their names | Explicit user instruction, 2026-10-16; PDF preservation follows project instructions |
 
 Academic constraint: Microsoft SQL Server (S1, p. 1). The programming language is unrestricted. The specific VPN implementation remains open; the decision to require it is confirmed.
 

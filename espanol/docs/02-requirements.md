@@ -1,6 +1,6 @@
 # Requerimientos iniciales
 
-Estado: borrador v0.1. Las referencias S1, D-* y P-* están en `00-contexto.md`; RN-* y PRN-* en `03-reglas-negocio.md`. Los criterios son propuestas de verificación y deben concretarse al especificar cada flujo.
+Estado: borrador v0.1. Las referencias S1, D-* y P-* están en `00-context.md`; RN-* y PRN-* en `03-business-rules.md`. Los criterios son propuestas de verificación y deben concretarse al especificar cada flujo.
 
 ## Requerimientos funcionales
 

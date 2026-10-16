@@ -23,6 +23,8 @@ Estado: borrador v0.1, 2026-10-12. Nombre provisional: Sistema hospitalario.
 | D-04 | El cajero se encarga de cobrar; recepción deja de cobrar | EQUIPO |
 | D-05 | Desarrollo guiado por especificaciones, usando Codex y Claude | EQUIPO |
 | D-06 | Primer trabajo de Claude Design: mapa general de los cinco roles | EQUIPO |
+| D-07 | Claude Code y Codex comparten las skills del proyecto; las actualizaciones de las skills del proyecto de Claude también deben estar disponibles para Codex | Instrucción explícita del usuario, 2026-10-15 |
+| D-08 | Usar nombres de documentos Markdown en inglés en ambas versiones de idioma; la documentación principal está en inglés con espejos en español. El documento 06 extrae el contenido de las fuentes pertinente al proyecto; los PDFs originales conservan sus nombres | Instrucción explícita del usuario, 2026-10-16; conservar los PDFs sigue las instrucciones del proyecto |
 
 Restricción académica: Microsoft SQL Server (S1, p. 1). El lenguaje de programación es libre. La implementación concreta de la VPN sigue pendiente; la decisión de exigirla está confirmada.
 

@@ -1,6 +1,6 @@
 # Problem statement and objectives
 
-Status: draft for team review. Scope source: S1; submission structure: S2, defined in `00-contexto.md`.
+Status: draft for team review. Scope source: S1; submission structure: S2, defined in `00-context.md`.
 
 ## Problem statement
 
@@ -27,6 +27,6 @@ Develop a web system that manages a hospital's appointments and associated opera
 
 ## Proposed evidence of success
 
-Detailed criteria are in `02-requerimientos.md`. The demonstration must allow a valid appointment to be scheduled, reject one that violates the rules, confirm a payment, cancel according to the policy, conduct a consultation with a prescription, and generate a receipt for a sale.
+Detailed criteria are in `02-requirements.md`. The demonstration must allow a valid appointment to be scheduled, reject one that violates the rules, confirm a payment, cancel according to the policy, conduct a consultation with a prescription, and generate a receipt for a sale.
 
 It will also verify that reception cannot collect payments or view clinical content, and that the three internal roles cannot access the system outside the VPN. These are project criteria, not results already achieved.

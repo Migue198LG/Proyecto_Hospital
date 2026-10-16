@@ -113,7 +113,7 @@ Brand, palette, and typography will be chosen later. Use a working name and fict
 ```text
 We are designing an academic hospital management system project at an early stage. We want to explore navigation and content layout before developing the system.
 
-Read the original PDF “ESPECIFICACIONES PROYECTO FINAL BASES DE DATOS 26-2.pdf” and the four attached derived documents: 00-contexto.md, 02-requerimientos.md, 03-reglas-negocio.md, and 04-diseno-vistas.md. Use the PDF to check the academic requirements; the Markdown files also record the team's later decisions. Distinguish confirmed decisions from proposals and open questions. If you find a discrepancy, flag it for review. Preserve UI/RF/RN IDs so design and specifications can be linked.
+Read the original PDF “ESPECIFICACIONES PROYECTO FINAL BASES DE DATOS 26-2.pdf” and the four attached derived documents: 00-context.md, 02-requirements.md, 03-business-rules.md, and 04-view-design.md. Use the PDF to check the academic requirements; the Markdown files also record the team's later decisions. Distinguish confirmed decisions from proposals and open questions. If you find a discrepancy, flag it for review. Preserve UI/RF/RN IDs so design and specifications can be linked.
 
 The entire application is web-based and has five roles: patient, doctor, receptionist, cashier, and administrator. Reception, cashier, and administration work through a VPN. The patient interface needs mobile adaptation; the other profiles need a comfortable computer layout, and the doctor also needs a tablet layout.
 

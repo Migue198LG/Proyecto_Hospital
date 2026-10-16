@@ -1,11 +1,12 @@
 .DS_Store
 .claude/settings.local.json
 
-# Claude Code files (local only)
+# Claude Code and Codex files (local only). xd
 .claude/
+.agents/
+.codex/
 CLAUDE.md
 espanol/CLAUDE.md
-.gitignore
 SKILLS.md
 AGENTS.md
 espanol/SKILLS.md

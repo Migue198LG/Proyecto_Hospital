@@ -113,7 +113,7 @@ La marca, paleta y tipografía se elegirán después. Usar nombre provisional y 
 ```text
 Estamos diseñando un proyecto académico de sistema hospitalario en etapa temprana. Queremos explorar navegación y distribución de contenido antes de desarrollar el sistema.
 
-Lee el PDF original «ESPECIFICACIONES PROYECTO FINAL BASES DE DATOS 26-2.pdf» y los cuatro documentos derivados adjuntos: 00-contexto.md, 02-requerimientos.md, 03-reglas-negocio.md y 04-diseno-vistas.md. Usa el PDF para comprobar las exigencias académicas; los Markdown registran también las decisiones posteriores del equipo. Distingue decisiones confirmadas de propuestas y preguntas pendientes. Si detectas una discrepancia, señálala para revisión. Conserva los IDs UI/RF/RN para poder relacionar diseño y especificaciones.
+Lee el PDF original «ESPECIFICACIONES PROYECTO FINAL BASES DE DATOS 26-2.pdf» y los cuatro documentos derivados adjuntos: 00-context.md, 02-requirements.md, 03-business-rules.md y 04-view-design.md. Usa el PDF para comprobar las exigencias académicas; los Markdown registran también las decisiones posteriores del equipo. Distingue decisiones confirmadas de propuestas y preguntas pendientes. Si detectas una discrepancia, señálala para revisión. Conserva los IDs UI/RF/RN para poder relacionar diseño y especificaciones.
 
 Toda la aplicación es web y tiene cinco roles: paciente, doctor, recepcionista, cajero y administrador. Recepción, caja y administración trabajan con VPN. El paciente necesita adaptación móvil; los otros perfiles necesitan una distribución cómoda en computadora, y doctor también en tableta.
 
