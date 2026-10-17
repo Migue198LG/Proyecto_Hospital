@@ -6,9 +6,9 @@ Estado: borrador para revisar con el equipo. Fuente del alcance: S1; estructura 
 
 La operación de un hospital requiere coordinar pacientes, disponibilidad de doctores, consultorios, citas, pagos y atención médica. Cuando esa información se administra en registros separados, pueden aparecer conflictos de horario, inconsistencias entre el estado de una cita y su pago, y dificultades para consultar el historial de movimientos.
 
-La gestión también necesita aplicar políticas de anticipación, prepago, cancelación y devolución de forma consistente. Farmacia y servicios extras requieren registrar ventas y existencias, mientras que los datos clínicos deben consultarse según las responsabilidades de cada usuario.
+La gestión también necesita aplicar consistentemente políticas de anticipación, prepago de consultas en línea mediante línea de captura, cancelación en línea y reembolso en línea (D-04). El cajero cobra únicamente medicamentos y servicios adicionales; esas ventas y existencias se separan de los pagos de consultas. Los datos clínicos deben consultarse según las responsabilidades de cada usuario.
 
-El proyecto propone un sistema web centralizado para apoyar estas operaciones, con cinco roles y una base Microsoft SQL Server. Separa las tareas de recepción y caja, conserva trazabilidad y restringe el acceso interno de recepción, administración y caja mediante VPN.
+El proyecto propone un sistema web centralizado para apoyar estas operaciones, con cinco roles y una base Microsoft SQL Server. Separa las tareas de recepción y caja, conserva trazabilidad y restringe las operaciones de recepción, administración y caja, y las funciones de consultorio del doctor, a la red privada del hospital mediante VPN.
 
 **Nota de evidencia:** los riesgos anteriores describen el problema que el proyecto busca resolver. No se ha estudiado un hospital real ni se ha demostrado que use registros separados o presente esos problemas. Si el equipo tiene una institución de referencia, sustituir esta formulación general por evidencia de esa operación.
 
@@ -29,4 +29,4 @@ Desarrollar un sistema web que gestione citas y operaciones asociadas de un hosp
 
 Los criterios detallados se encuentran en `02-requirements.md`. La demostración debe permitir agendar una cita válida, rechazar una que incumpla las reglas, confirmar un pago, cancelar aplicando su política, realizar una atención con receta y generar un ticket por una venta.
 
-También se verificará que recepción no pueda cobrar ni consultar contenido clínico, y que los tres roles internos no accedan fuera de la VPN. Son criterios del proyecto, no resultados ya obtenidos.
+También se verificará que recepción no pueda cobrar ni consultar contenido clínico, y que las operaciones de recepción, administración y caja, y las funciones de consultorio del doctor, rechacen el acceso sin la VPN a la red del hospital. La autenticación y los permisos del rol deben seguir aplicándose dentro de la VPN. Son criterios del proyecto, no resultados ya obtenidos.

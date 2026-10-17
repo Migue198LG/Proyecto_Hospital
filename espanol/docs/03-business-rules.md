@@ -26,8 +26,8 @@ Estado: borrador v0.1. Referencias S1/EQUIPO y decisiones D-* en `00-context.md`
 | RN-18 | Debe haber al menos diez especialidades, cuatro doctores por especialidad y tres servicios extras distintos de consulta y medicamentos | S1 pp. 2/4 |
 | RN-19 | El costo de consulta depende de la especialidad | S1 p. 2 |
 | RN-20 | Hay cinco roles y todas sus interfaces son web | D-01/D-02 |
-| RN-21 | Recepcionista, administrador y cajero requieren VPN para trabajar | D-03; implementación y pérdida de VPN en P-10 |
-| RN-22 | Los cobros son responsabilidad del cajero y recepción deja de cobrar | D-04; se propone que caja también ejecute devoluciones |
+| RN-21 | Las operaciones de recepción, administrador y cajero, y las funciones de consultorio del doctor (datos del paciente/clínicos, historial médico, diagnósticos, tratamientos y recetas), requieren acceso por VPN a la red privada del hospital, además de autenticación y permisos por rol de la aplicación | D-03/D-09; implementación, política de VPN remota, otras funciones del doctor y pérdida de conexión en P-10 |
+| RN-22 | El cajero cobra únicamente medicamentos y servicios adicionales. Las consultas se pagan por anticipado en línea mediante línea de captura; sus pagos, cancelaciones y reembolsos se gestionan en línea sin intervención del cajero. Recepción no cobra | D-04; proveedor y conciliación P-01/P-05/P-07; aprobación del doctor sigue en RN-08 |
 
 ## Política de cancelación del paciente
 
@@ -39,7 +39,7 @@ Interpretación propuesta del texto de S1, p. 2, para convertirlo en intervalos 
 | Al menos 24 y menos de 48 horas | 50% |
 | Menos de 24 horas, antes de la cita | 0% |
 
-Confirmar esta interpretación y qué pasa después del inicio de la cita (P-06). El monto sobre el que se calcula, la forma y fecha del reembolso quedan en P-07. Cancelar y registrar una devolución efectivamente pagada son operaciones diferentes.
+Confirmar esta interpretación y qué pasa después del inicio de la cita (P-06). Los reembolsos de consultas se gestionan en línea sin intervención del cajero (D-04); base de cálculo, mecanismo de ejecución y plazos siguen en P-07. Cancelar y verificar una devolución efectivamente ejecutada son operaciones distintas.
 
 ## Estados de cita de la fuente
 
@@ -60,7 +60,7 @@ No añadir estados clínicos o financieros a esta lista sin una decisión explí
 | PRN-01 | Impedir traslapes de consultorio aunque sean doctores diferentes | Consistencia de agenda; P-11 |
 | PRN-02 | Revalidar disponibilidad al confirmar y asegurar reserva atómica | Evitar que dos solicitudes simultáneas ocupen el mismo espacio |
 | PRN-03 | Impedir ventas con existencias insuficientes y actualizar inventario con la venta | Consistencia de farmacia; P-08 |
-| PRN-04 | Impedir confirmar dos veces un mismo pago o ejecutar dos veces la misma devolución | Consistencia de caja; P-01/P-07 |
+| PRN-04 | Impedir confirmar dos veces un mismo pago o ejecutar dos veces la misma devolución | Consistencia de pagos/reembolsos de consultas en línea y ventas separadas de medicamentos/servicios; P-01/P-07 |
 | PRN-05 | Conservar el costo y la política aplicados a una cita aunque cambien los catálogos | Historial consistente; por validar |
 | PRN-06 | Administrador y cajero sin contenido clínico por defecto; doctor con acceso a pacientes relacionados con su atención | Matriz de permisos pendiente P-02/P-04/P-12 |
 

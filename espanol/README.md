@@ -4,7 +4,9 @@
 
 Estado: borrador v0.1. Fecha: 2026-10-12.
 
-Proyecto académico para gestionar citas, consultas, recetas, medicamentos, servicios y pagos con Microsoft SQL Server. Las cinco experiencias serán web: paciente, doctor, recepcionista, cajero y administrador. Recepcionista, cajero y administrador accederán por VPN.
+Proyecto académico para gestionar citas, consultas, recetas, medicamentos, servicios y pagos con Microsoft SQL Server. Las cinco experiencias serán web: paciente, doctor, recepcionista, cajero y administrador. Las funciones de recepcionista, cajero y administrador, y las funciones de consultorio del doctor, requieren acceso por VPN a la red privada del hospital (D-03/D-09).
+
+Alcance de pagos (D-04, aclarada el 2026-10-16): las consultas se pagan por anticipado en línea mediante línea de captura y sus cancelaciones/reembolsos se gestionan en línea. El cajero cobra únicamente medicamentos y servicios adicionales del hospital. El proveedor y la integración del pago en línea siguen por definir.
 
 ## Empezar aquí
 
@@ -38,12 +40,16 @@ Las entregas académicas se obtuvieron de las rúbricas originales; no basta con
 
 ## Contexto para agentes
 
+`AGENTS.md`, `CLAUDE.md` y `SKILLS.md` son archivos locales ignorados por Git; los comandos compartidos y la definición de terminado están en la sección de scripts compartidos de `docs/05-spec-driven-development.md`.
+
 - `AGENTS.md`: instrucciones comunes del proyecto y entrada para Codex.
 - `CLAUDE.md`: importa las mismas instrucciones para Claude Code.
 - `SKILLS.md`: procedimientos compartidos; `.agents/skills` enlaza a `.claude/skills/` para que ambos agentes lean las mismas skills del proyecto. Usar `claude-codex-sync` para comprobar o reparar esta configuración.
 - `docs/`: contexto funcional compartido; leer solo los documentos relevantes para la tarea.
 - `specs/template.md`: formato ligero para especificar una funcionalidad cuando se empiece a trabajar en ella.
 - `specs/001-schedule-appointment.md`: ejemplo en borrador para aprender el ciclo antes de implementar.
+- `plans/`: planes del proyecto con fecha. Las propuestas registradas ahí no son decisiones hasta que aparezcan en `docs/00-context.md`.
+- `scripts/`: herramientas versionadas: `trace_check.py` (identificadores, enlaces y espejos en español) y `new_spec.sh` (esqueletos de spec nuevas en ambos idiomas).
 
 Un encargo a un agente debe incluir: objetivo, RF/RN implicados, archivos a modificar, alcance, pendientes relevantes y cómo verificar el resultado. Ambos agentes pueden implementar o revisar; el equipo asigna responsabilidades por tarea.
 

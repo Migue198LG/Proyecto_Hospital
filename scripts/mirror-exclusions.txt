@@ -1,0 +1,11 @@
+# Paths relative to the repository root that have no Spanish mirror in espanol/. xd
+# A trailing slash means a directory prefix; otherwise the entry is one file. xd
+# Read by scripts/trace_check.py and by .claude/hooks/md-changed.sh; edit it here only. xd
+espanol/
+contexto/
+.claude/
+.agents/
+.codex/
+AGENTS.md
+CLAUDE.md
+SKILLS.md

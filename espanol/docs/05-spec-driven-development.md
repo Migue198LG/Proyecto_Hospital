@@ -87,3 +87,16 @@ Al terminar una tarea, el resultado debe decir qué RF/RN/CA cubre, qué se veri
 6. Continuar con cancelaciones, consulta/receta, venta/inventario, administración y bitácoras, cada una con su propia spec y criterios.
 
 Los pasos 2 y 3 pueden avanzar a la vez, con revisión cruzada: el boceto puede revelar datos que falten en el modelo, y el modelo puede revelar preguntas de interfaz. La segunda rúbrica exige agendar una cita desde aplicación o web con validaciones; por eso este recorrido merece atención temprana.
+
+## Scripts y verificaciones compartidos
+
+Los archivos de configuración de agentes (`AGENTS.md`, `CLAUDE.md`, `SKILLS.md`, `.claude/`, `.agents/`) son locales y no se versionan, así que los procedimientos que el equipo necesita viven aquí y en `scripts/`. Los scripts solo requieren Python 3 y Bash; se ejecutan desde la raíz del repositorio.
+
+| Comando | Propósito | Lo que no demuestra |
+| --- | --- | --- |
+| `python3 scripts/trace_check.py` | Verifica que cada identificador RF/RNF/RN/PRN/UI/D/P/SPEC/CA citado esté definido en su documento propietario, que los enlaces locales resuelvan, que cada `.md` en inglés tenga su espejo en `espanol/` con la misma estructura de encabezados e identificadores, y lista como propuestas los identificadores que solo existen en `plans/` | Traducción correcta, consistencia de permisos, balanceo de diagramas ni cobertura completa de requerimientos; eso requiere revisión manual |
+| `scripts/new_spec.sh <slug> ["Name"] ["Nombre"]` | Crea `specs/NNN-<slug>.md` y `espanol/specs/NNN-<slug>.md` a partir de ambas plantillas con el siguiente número libre y estado borrador | Que las referencias sean correctas; tomarlas de los documentos propietarios y revisarlas |
+
+Definición de terminado para una tarea de documentación: el documento propietario define cualquier identificador nuevo, los documentos afectados lo citan, el espejo en español está actualizado, `trace_check.py` no reporta errores y la entrega indica lo que queda pendiente. Para tareas de implementación, agregar los criterios de aceptación ejecutados y su evidencia; pasar la verificación estructural no es una prueba funcional.
+
+Las rutas sin espejo en español están listadas en `scripts/mirror-exclusions.txt`, la única lista que usan la verificación y el hook de Claude Code.

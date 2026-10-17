@@ -12,12 +12,12 @@ Estado: borrador v0.1. Las referencias S1, D-* y P-* están en `00-context.md`; 
 | RF-04 | Gestionar especialidades, costos, consultorios y jornadas | Se consultan catálogos y horarios utilizados para agendar; existe una única especialidad activa por doctor | RN-04/RN-13/RN-18/RN-19; responsables P-02 |
 | RF-05 | Agendar citas con disponibilidad válida | Se eligen especialidad, doctor, fecha y horario; se rechazan fechas, horarios y duplicados que incumplan RN-01/02/03/04 | S1 pp. 1/2; límites P-03/P-04/P-05 |
 | RF-06 | Generar comprobante y línea de pago | Al crear la cita se muestran folio, paciente, fecha, horario, consultorio, especialidad, doctor, línea, plazo de pago y política de cancelación | S1 p. 3; RN-06/RN-07 |
-| RF-07 | Registrar pagos y resolver vencimientos | Caja registra la confirmación y la cita pasa a pagada; una cita que no cumple el plazo se cancela y libera disponibilidad | RN-06/RN-22; mecanismo P-01/P-05 |
+| RF-07 | Verificar prepagos de consultas en línea y resolver vencimientos | El sistema verifica el pago contra la línea de captura de la cita y la marca pagada; una cita vencida sin pago se cancela y libera el turno. El cajero no puede confirmar pagos de consultas; las notificaciones tardías siguen la política de conciliación por definir | D-04; RN-06/RN-22; integración y límites P-01/P-05 |
 | RF-08 | Consultar citas e historial con filtros | Paciente ve sus citas por fecha/estado; doctor consulta su agenda; recepción consulta agenda general | S1 pp. 2/3/4; RN-09/RN-10 |
-| RF-09 | Gestionar cancelaciones | Paciente o recepción cancela según la política; doctor solicita y recepción aprueba antes de cancelar; no existe reagendar | RN-05/RN-07/RN-08; P-06 |
-| RF-10 | Gestionar devoluciones asociadas a cancelaciones | Se distingue el importe que corresponde devolver del reembolso ejecutado; caja registra su ejecución | RN-07/RN-08; responsabilidad y mecanismo propuestos P-07 |
-| RF-11 | Registrar atención y consultar historial médico | El doctor accede a los datos clínicos permitidos y registra el resultado de consulta; recepción no recibe el contenido clínico | S1 p. 3; RN-14; P-04/P-06/P-12 |
-| RF-12 | Emitir y consultar recetas | Receta incluye folio, fecha, doctor, cédula, paciente, edad, diagnóstico, medicamentos, tratamientos y observaciones | S1 p. 3; RN-14; correcciones P-12 |
+| RF-09 | Gestionar cancelaciones en línea | Paciente o recepción cancela mediante la aplicación web según la política; el doctor solicita y recepción aprueba en línea antes de cancelar; no hay paso por caja ni reagendamiento | D-04; RN-05/RN-07/RN-08; P-06 |
+| RF-10 | Gestionar reembolsos de consultas en línea | Distinguir derecho al reembolso, procesamiento y ejecución verificada; el paciente consulta el resultado en línea. El cajero no emite ni confirma reembolsos de consultas | D-04; RN-07/RN-08; ejecución y conciliación P-07 |
+| RF-11 | Registrar atención y consultar historial médico | El doctor accede a los datos clínicos permitidos y registra el resultado de consulta únicamente mediante la VPN a la red del hospital; recepción no recibe el contenido clínico | S1 p. 3; RN-14/RN-21; D-09; RNF-03; P-04/P-06/P-12 |
+| RF-12 | Emitir y consultar recetas | Receta incluye folio, fecha, doctor, cédula, paciente, edad, diagnóstico, medicamentos, tratamientos y observaciones; el doctor requiere acceso por VPN a la red del hospital para emitirla o consultarla | S1 p. 3; RN-14/RN-21; D-09; RNF-03; correcciones P-12 |
 | RF-13 | Gestionar medicamentos e inventario | Se consultan medicamentos, precios y existencias; la propuesta de venta actualiza cantidades | S1 p. 4; PRN-03; responsables y detalle P-02/P-08 |
 | RF-14 | Gestionar servicios y ventas | Caja puede vender servicios y medicamentos a un cliente sin cuenta de paciente; se calcula el total y genera ticket | S1 pp. 4/5; RN-16/RN-18/RN-22 |
 | RF-15 | Registrar y consultar bitácoras | Se registra actor y movimiento de citas/consultas; ninguna interfaz ni permiso permite modificar o borrar entradas | S1 pp. 4/5; RN-17; consulta P-12 |
@@ -28,7 +28,7 @@ Estado: borrador v0.1. Las referencias S1, D-* y P-* están en `00-context.md`; 
 | --- | --- | --- | --- |
 | RNF-01 | Usar Microsoft SQL Server | Demostrar conexión y scripts ejecutables en el motor elegido | Fuente S1/S3 |
 | RNF-02 | Ofrecer las cinco interfaces mediante navegador | Abrir cada experiencia web; paciente usable en móvil y operaciones internas en computadora | Web confirmado D-02; adaptación propuesta |
-| RNF-03 | Restringir por VPN a recepción, administrador y cajero | Con credenciales válidas, fuera de VPN no se accede a sus operaciones; dentro de VPN se aplican además permisos del rol | Confirmado D-03; diseño técnico P-10 |
+| RNF-03 | Restringir recepción, administrador, cajero y las funciones de consultorio del doctor a la red privada del hospital mediante VPN | Con credenciales válidas pero sin acceso autorizado por VPN a la red del hospital, rechazar páginas protegidas y solicitudes directas a la API, incluidas lecturas/escrituras clínicas y recetas del doctor; con VPN, seguir rechazando solicitudes sin autenticación o autorización | Confirmado D-03/D-09; diseño técnico y política de VPN remota P-10 |
 | RNF-04 | Aplicar autenticación y autorización en servidor | Rechazar acceso directo no autorizado, aunque se conozca URL o identificador del recurso | Propuesto; materializa permisos S1 |
 | RNF-05 | Mantener integridad ante operaciones concurrentes | Dos reservas simultáneas para un mismo espacio no producen doble ocupación; operaciones de venta/pago no dejan cambios parciales | Propuesto PRN-02/PRN-03/PRN-04 |
 | RNF-06 | Proteger credenciales y datos de usuarios | Transporte protegido, contraseñas sin almacenamiento en texto y respuestas acordes con permisos | Propuesto; decisiones técnicas pendientes |
@@ -51,8 +51,8 @@ Los formularios personales, obligatoriedad, tipos, longitudes y validaciones se 
 
 1. Agendamiento válido y rechazo por cada RN aplicable, incluyendo límites temporales una vez resueltos.
 2. Solicitudes simultáneas del mismo horario y del mismo paciente/doctor.
-3. Pago confirmado, plazo vencido y pago registrado en el límite acordado.
+3. Pago en línea por línea de captura, confirmación verificada, notificaciones duplicadas/tardías, plazo vencido y pago en el límite acordado; se rechaza el acceso del cajero a pagos/reembolsos de consultas.
 4. Cancelación a 48 horas, a 24 horas y por debajo de 24; cancelación por doctor aprobada.
-5. Recepción sin permisos de cobro ni contenido clínico; roles internos con/sin VPN.
+5. Recepción sin permisos de cobro ni contenido clínico; funciones de recepción/administrador/cajero y lecturas/escrituras clínicas del doctor con y sin acceso por VPN a la red del hospital, incluidas solicitudes directas a la API. La VPN no debe omitir la autenticación ni los permisos del rol.
 6. Venta a cliente no registrado; existencias y total correctos.
 7. Registro de movimiento y rechazo de modificación/borrado de bitácora.

@@ -2,7 +2,9 @@
 
 Status: draft v0.1. Date: 2026-10-12.
 
-Academic project to manage appointments, consultations, prescriptions, medications, services, and payments with Microsoft SQL Server. All five role interfaces will be web-based: patient, doctor, receptionist, cashier, and administrator. Receptionists, cashiers, and administrators will access the system through a VPN.
+Academic project to manage appointments, consultations, prescriptions, medications, services, and payments with Microsoft SQL Server. All five role interfaces will be web-based: patient, doctor, receptionist, cashier, and administrator. Receptionist, cashier, and administrator functions, and the doctor's consultation functions, require VPN access to the hospital's private network (D-03/D-09).
+
+Payment scope (D-04, clarified 2026-10-16): consultations are prepaid online through a payment reference (línea de captura), and their cancellations/refunds are managed online. The cashier collects only medication and additional hospital-service payments. The online payment provider and integration remain to be defined.
 
 ## Start here
 
@@ -36,12 +38,16 @@ The academic deliverables were taken from the original rubrics; preparing mockup
 
 ## Context for agents
 
+`AGENTS.md`, `CLAUDE.md`, and `SKILLS.md` are local files ignored by Git; the shared commands and definition of done are in the shared scripts section of `docs/05-spec-driven-development.md`.
+
 - `AGENTS.md`: shared project instructions and entry point for Codex.
 - `CLAUDE.md`: imports the same instructions for Claude Code.
 - `SKILLS.md`: shared procedures; `.agents/skills` links to `.claude/skills/` so both agents read the same project skills. Use `claude-codex-sync` to check or repair this arrangement.
 - `docs/`: shared functional context; read only documents relevant to the task.
 - `specs/template.md`: lightweight format for specifying a feature when work on it begins.
 - `specs/001-schedule-appointment.md`: draft example for learning the cycle before implementation.
+- `plans/`: dated project plans. Proposals recorded there are not decisions until they appear in `docs/00-context.md`.
+- `scripts/`: tracked tooling: `trace_check.py` (identifiers, links, and Spanish mirrors) and `new_spec.sh` (new spec skeletons in both languages).
 
 An assignment to an agent must include: objective, relevant RF/RN, files to modify, scope, relevant open questions, and how to verify the result. Both agents can implement or review; the team assigns responsibilities per task.
 

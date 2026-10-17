@@ -26,8 +26,8 @@ Status: draft v0.1. References S1/EQUIPO and decisions D-* are in `00-context.md
 | RN-18 | There must be at least ten specialties, four doctors per specialty, and three additional services other than consultations and medications | S1 pp. 2/4 |
 | RN-19 | The consultation cost depends on the specialty | S1 p. 2 |
 | RN-20 | There are five roles, and all their interfaces are web-based | D-01/D-02 |
-| RN-21 | Receptionists, administrators, and cashiers require a VPN to work | D-03; implementation and VPN connection loss in P-10 |
-| RN-22 | Payment collection is the cashier's responsibility, and reception no longer collects payments | D-04; having the cashier also issue refunds is proposed |
+| RN-21 | Reception, administrator, and cashier operations, and doctors' consultation functions (patient/clinical data, medical records, diagnoses, treatments, and prescriptions), require VPN access to the hospital's private network in addition to application authentication and role permissions | D-03/D-09; implementation, remote VPN policy, other doctor functions, and connection loss in P-10 |
+| RN-22 | The cashier collects only medication and additional-service payments. Consultations are prepaid online by línea de captura; their payments, cancellations, and associated refunds are managed online without cashier intervention. Reception does not collect payments | D-04; provider and reconciliation P-01/P-05/P-07; doctor approval remains RN-08 |
 
 ## Patient cancellation policy
 
@@ -39,7 +39,7 @@ Proposed interpretation of the text in S1, p. 2, to turn it into intervals witho
 | At least 24 and less than 48 hours | 50% |
 | Less than 24 hours, before the appointment | 0% |
 
-Confirm this interpretation and what happens after the appointment starts (P-06). The amount used for the calculation, refund method, and refund date remain in P-07. Canceling and recording an actually issued refund are separate operations.
+Confirm this interpretation and what happens after the appointment starts (P-06). Consultation refunds are managed online without cashier intervention (D-04); the calculation base, execution mechanism, and timing remain in P-07. Canceling and verifying an actually issued refund are separate operations.
 
 ## Appointment statuses from the source
 
@@ -60,7 +60,7 @@ Do not add clinical or financial statuses to this list without an explicit decis
 | PRN-01 | Prevent consultation room overlaps even when doctors differ | Scheduling consistency; P-11 |
 | PRN-02 | Revalidate availability at confirmation and ensure an atomic reservation | Prevent two simultaneous requests from occupying the same slot |
 | PRN-03 | Prevent sales with insufficient stock and update inventory with the sale | Pharmacy consistency; P-08 |
-| PRN-04 | Prevent confirming the same payment twice or issuing the same refund twice | Cashier consistency; P-01/P-07 |
+| PRN-04 | Prevent confirming the same payment twice or issuing the same refund twice | Online consultation payment/refund consistency and separate medication/service sales; P-01/P-07 |
 | PRN-05 | Preserve the cost and policy applied to an appointment even if catalogs change | Consistent history; to be validated |
 | PRN-06 | Administrators and cashiers have no clinical content access by default; doctors have access to patients related to their care | Permissions matrix pending P-02/P-04/P-12 |
 

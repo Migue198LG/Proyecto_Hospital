@@ -6,7 +6,7 @@ Status: **draft specification example**. Owner: team, to be assigned. Date: 2026
 
 A patient must be able to find a valid slot with a doctor and request an appointment. The observable result is an appointment **Scheduled, awaiting payment**, with an appointment reference number, confirmation document, and payment reference. Reception can also schedule on behalf of a patient, following the same availability rules.
 
-This spec covers creation and the confirmation document. The payment collection method, payment confirmation, automatic expiration, and cancellations will be specified separately; their statuses and data must be considered when modeling appointments.
+This spec covers creation and the confirmation document. Online consultation prepayment by línea de captura and online cancellation/refund management are confirmed by D-04; the cashier handles only medication and additional-service payments. Provider integration, payment verification, automatic expiration, and cancellation details will be specified separately; their statuses and data must be considered when modeling appointments.
 
 ## References
 
@@ -14,7 +14,7 @@ This spec covers creation and the confirmation document. The payment collection 
 - Requirements: RF-01, RF-04, RF-05, RF-06; RNF-02, RNF-04, and RNF-05.
 - Rules: RN-01, RN-02, RN-03, RN-04, RN-05, RN-06, RN-13, RN-18, RN-19.
 - Screens: UI-P03 and UI-P04; UI-R02 for reception's operation.
-- Decisions: D-01, D-02, and D-03 for internal access.
+- Decisions: D-01, D-02, D-03 for internal access, and D-04 for online consultation payments and cashier scope.
 - Open questions affecting implementation: P-01, P-03, P-04, P-05, and P-11.
 - Proposals to review: PRN-01, PRN-02, and PRN-05.
 
@@ -69,7 +69,7 @@ Revalidation at confirmation and atomic reservation are implementation proposals
 2. P-04: Which statuses count toward the restriction on a pending appointment with the same doctor?
 3. P-05: How are three months, the 48-hour boundary, and the start of the payment deadline calculated?
 4. P-11: How is a consultation room selected, and how are two simultaneous appointments in the same room prevented?
-5. P-01: What format and mechanism will the payment reference use? Who confirms payment, and how?
+5. P-01: Which provider and integration issue and verify the línea de captura for online consultation payment? What evidence is retained, and will the academic demonstration use a real connection or a labeled simulation?
 6. PRN-05: Is the cost shown at booking frozen in the appointment?
 
 ## Technical plan and tasks

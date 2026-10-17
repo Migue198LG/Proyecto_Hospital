@@ -6,7 +6,7 @@ Estado: **ejemplo de especificación en borrador**. Responsable: equipo, por asi
 
 Un paciente debe poder encontrar un espacio válido con un doctor y solicitar una cita. El resultado observable es una cita **Agendada pendiente de pago**, con folio, comprobante y línea de pago. Recepción también puede agendar en nombre de un paciente, respetando las mismas reglas de disponibilidad.
 
-Esta spec cubre creación y comprobante. El método de cobro, la confirmación del pago, el vencimiento automático y las cancelaciones se especificarán por separado; sus estados y datos deben considerarse al modelar citas.
+Esta spec cubre creación y comprobante. El prepago de consultas en línea mediante línea de captura y la gestión en línea de cancelaciones/reembolsos están confirmados por D-04; el cajero maneja únicamente pagos de medicamentos y servicios adicionales. La integración del proveedor, verificación del pago, vencimiento automático y detalles de cancelación se especificarán por separado; sus estados y datos deben considerarse al modelar citas.
 
 ## Referencias
 
@@ -14,7 +14,7 @@ Esta spec cubre creación y comprobante. El método de cobro, la confirmación d
 - Requerimientos: RF-01, RF-04, RF-05, RF-06; RNF-02, RNF-04 y RNF-05.
 - Reglas: RN-01, RN-02, RN-03, RN-04, RN-05, RN-06, RN-13, RN-18, RN-19.
 - Pantallas: UI-P03 y UI-P04; UI-R02 para la operación de recepción.
-- Decisiones: D-01, D-02 y D-03 para acceso interno.
+- Decisiones: D-01, D-02, D-03 para acceso interno y D-04 para pagos de consultas en línea y alcance del cajero.
 - Pendientes que afectan implementación: P-01, P-03, P-04, P-05 y P-11.
 - Propuestas a revisar: PRN-01, PRN-02 y PRN-05.
 
@@ -69,7 +69,7 @@ La revalidación al confirmar y la atomicidad de la reserva son propuestas de im
 2. P-04: ¿Qué estados cuentan para la restricción de cita pendiente con el mismo doctor?
 3. P-05: ¿Cómo se cuentan tres meses, el instante de 48 horas y el inicio del plazo de pago?
 4. P-11: ¿Cómo se elige consultorio y se evitan dos citas simultáneas en el mismo consultorio?
-5. P-01: ¿Qué formato y mecanismo tendrá la línea de pago? ¿Quién y cómo confirma su pago?
+5. P-01: ¿Qué proveedor e integración emiten y verifican la línea de captura para pagar consultas en línea? ¿Qué evidencia se conserva y la demostración académica usará una conexión real o una simulación identificada?
 6. PRN-05: ¿Se congela en la cita el costo visto al agendar?
 
 ## Plan técnico y tareas

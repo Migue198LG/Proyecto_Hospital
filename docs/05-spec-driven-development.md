@@ -87,3 +87,16 @@ At the end of a task, the result must state which RF/RN/CA it covers, what was v
 6. Continue with cancellations, consultation/prescription, sales/inventory, administration, and audit logs, each with its own spec and criteria.
 
 Steps 2 and 3 can progress at the same time with cross-review: the mockup can reveal data missing from the model, and the model can reveal interface questions. The second rubric requires scheduling an appointment from an application or website with validations; this is why the journey deserves early attention.
+
+## Shared scripts and checks
+
+Agent configuration files (`AGENTS.md`, `CLAUDE.md`, `SKILLS.md`, `.claude/`, `.agents/`) are local and not versioned, so the procedures teammates need live here and in `scripts/`. The scripts need only Python 3 and Bash; run them from the repository root.
+
+| Command | Purpose | What it does not prove |
+| --- | --- | --- |
+| `python3 scripts/trace_check.py` | Checks that every cited RF/RNF/RN/PRN/UI/D/P/SPEC/CA identifier is defined in its owner document, that local links resolve, that every English `.md` has its `espanol/` mirror with the same heading structure and identifiers, and lists identifiers that exist only in `plans/` as proposals | Correct translation, permission consistency, diagram balancing, or complete requirement coverage; those need a manual review |
+| `scripts/new_spec.sh <slug> ["Name"] ["Nombre"]` | Creates `specs/NNN-<slug>.md` and `espanol/specs/NNN-<slug>.md` from both templates with the next free number and status draft | That the references are right; take them from the owner documents and review them |
+
+Definition of done for a documentation task: the owner document defines any new identifier, the affected documents cite it, the Spanish mirror is updated, `trace_check.py` reports no errors, and the delivery states what remains open. For implementation tasks, add the acceptance criteria executed and their evidence; a passing structural check is not a functional test.
+
+Paths without a Spanish mirror are listed in `scripts/mirror-exclusions.txt`, the single list used by the check and by the Claude Code hook.
